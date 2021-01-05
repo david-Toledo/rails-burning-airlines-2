@@ -92,3 +92,5 @@ reservation3 = Reservation.create!(booking_code: "AB3")
 
 
 puts "Added #{Reservation.count} reservations"
+
+airplane1.flights << flight1 << flight2 << flight3
