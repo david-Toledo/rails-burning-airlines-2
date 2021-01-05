@@ -42,15 +42,55 @@ flight1 = Flight.create!(
 
 flight2 = Flight.create!(
   flight_no: 2,
-  date: "2021-01-01",
-  to: "Perth",
-  from: "Sydney"
+  date: "2021-01-02",
+  to: "Sydney",
+  from: "Perth"
 )
 
 flight3 = Flight.create!(
   flight_no: 3,
-  date: "2021-01-01",
+  date: "2021-01-03",
+  to: "Melbourne",
+  from: "Sydney"
+)
+flight4 = Flight.create!(
+  flight_no: 4,
+  date: "2021-01-04",
+  to: "Sydney",
+  from: "Melbourne"
+)
+
+flight5 = Flight.create!(
+  flight_no: 5,
+  date: "2021-01-05",
+  to: "Sydney",
+  from: "Brisbane"
+)
+
+flight6 = Flight.create!(
+  flight_no: 6,
+  date: "2021-01-06",
+  to: "Brisbane",
+  from: "Sydney"
+)
+flight7 = Flight.create!(
+  flight_no: 7,
+  date: "2021-01-07",
   to: "Perth",
+  from: "Darwin"
+)
+
+flight8 = Flight.create!(
+  flight_no: 8,
+  date: "2021-01-08",
+  to: "Darwin",
+  from: "Perth"
+)
+
+flight9 = Flight.create!(
+  flight_no: 9,
+  date: "2021-01-09",
+  to: "London",
   from: "Sydney"
 )
 
@@ -94,3 +134,8 @@ reservation3 = Reservation.create!(booking_code: "AB3")
 puts "Added #{Reservation.count} reservations"
 
 airplane1.flights << flight1 << flight2 << flight3
+airplane2.flights << flight4 << flight5 << flight6
+airplane3.flights << flight7 << flight8 << flight9
+
+# puts "Airplane #{airplane1.serial_no} has the following flights: #{airplane1.flights.pluck(:serial_no).join(", ")}"
+# puts "Flight #{flight5.flight_no} has the following plane #{flight5.}"
