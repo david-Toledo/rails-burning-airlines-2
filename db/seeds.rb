@@ -124,10 +124,32 @@ puts "Added #{User.count} users"
 Reservation.destroy_all
 
 reservation1 = Reservation.create!(booking_code: "AB1")
-
 reservation2 = Reservation.create!(booking_code: "AB2")
-
 reservation3 = Reservation.create!(booking_code: "AB3")
+reservation4 = Reservation.create!(booking_code: "AB4")
+reservation5 = Reservation.create!(booking_code: "AB5")
+reservation6 = Reservation.create!(booking_code: "AB6")
+reservation7 = Reservation.create!(booking_code: "AB7")
+reservation8 = Reservation.create!(booking_code: "AB8")
+reservation9 = Reservation.create!(booking_code: "AB9")
+reservation10 = Reservation.create!(booking_code: "AB10")
+reservation11 = Reservation.create!(booking_code: "AB11")
+reservation12 = Reservation.create!(booking_code: "AB12")
+reservation13 = Reservation.create!(booking_code: "AB13")
+reservation14 = Reservation.create!(booking_code: "AB14")
+reservation15 = Reservation.create!(booking_code: "AB15")
+reservation16 = Reservation.create!(booking_code: "AB16")
+reservation17 = Reservation.create!(booking_code: "AB17")
+reservation18 = Reservation.create!(booking_code: "AB18")
+reservation19 = Reservation.create!(booking_code: "AB19")
+reservation20 = Reservation.create!(booking_code: "AB20")
+reservation21 = Reservation.create!(booking_code: "AB21")
+reservation22 = Reservation.create!(booking_code: "AB22")
+reservation23 = Reservation.create!(booking_code: "AB23")
+reservation24 = Reservation.create!(booking_code: "AB24")
+reservation25 = Reservation.create!(booking_code: "AB25")
+reservation26 = Reservation.create!(booking_code: "AB26")
+reservation27 = Reservation.create!(booking_code: "AB27")
 
 
 
@@ -137,5 +159,36 @@ airplane1.flights << flight1 << flight2 << flight3
 airplane2.flights << flight4 << flight5 << flight6
 airplane3.flights << flight7 << flight8 << flight9
 
-# puts "Airplane #{airplane1.serial_no} has the following flights: #{airplane1.flights.pluck(:serial_no).join(", ")}"
-# puts "Flight #{flight5.flight_no} has the following plane #{flight5.}"
+user1.reservations << reservation1 << reservation2 << reservation3 << reservation10 << reservation13 << reservation16 << reservation19 << reservation22 << reservation25
+user2.reservations << reservation4 << reservation5 << reservation6 << reservation11 << reservation14 << reservation17 << reservation20 << reservation23 << reservation26
+user3.reservations << reservation7 << reservation8 << reservation9 << reservation12 << reservation15 << reservation18 << reservation21 << reservation24 << reservation27
+
+flight1.reservations << reservation1 << reservation2 << reservation3
+flight2.reservations << reservation4 << reservation5 << reservation6
+flight3.reservations << reservation7 << reservation8 << reservation9
+flight4.reservations << reservation10 << reservation11 << reservation12
+flight5.reservations << reservation13 << reservation14 << reservation15
+flight6.reservations << reservation16 << reservation17 << reservation18
+flight7.reservations << reservation19 << reservation20 << reservation21
+flight8.reservations << reservation22 << reservation23 << reservation24
+flight9.reservations << reservation25 << reservation26 << reservation27
+
+
+puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
+
+puts "Airplane #{airplane1.serial_no} has the following flights: #{airplane1.flights.pluck(:flight_no).join(", ")}"
+puts "Flight #{flight5.flight_no} has the following plane #{flight5.airplane.serial_no}"
+
+puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
+puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
+
+puts "User #{user1.name} has the following reservations: #{user1.reservations.pluck(:booking_code).join(", ")}"
+puts "Reservation #{reservation5.booking_code} has the following user #{reservation5.user.name}"
+
+puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
+puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
+
+puts "Flight #{flight1.flight_no} has the following reservations: #{flight1.reservations.pluck(:booking_code).join(", ")}"
+puts "Reservation #{reservation5.booking_code} has the following flight #{reservation5.flight.flight_no}"
+
+puts "+++++++++++++++++++++++++++++++++++++++++++++++++"
