@@ -4,7 +4,11 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.all
+    headers['Access-Control-Allow-Origin'] = '*'
+    respond_to do |format|
+      format.html { render index: @reservations = Reservation.all  }
+      format.json { render json: Reservation.all, include: ['flight','user'] }
+    end
   end
 
   # GET /reservations/1

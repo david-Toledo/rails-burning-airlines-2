@@ -1,29 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="text-center">
+    <%= image_tag 'logo.jpg', size: "100x100", class: "inline-image" %>
+    <h2 class="inline-image">Burning Airlines - Admin</h2>
+  </div>
+  <nav>
+      <%= render partial: 'layouts/nav'%>
+  </nav>
 
-<p>
-  <strong>Flight no:</strong>
-  <%= @flight.flight_no %>
-</p>
+  <div class="text-center">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @flight.date %>
-</p>
+    <p>
+      <strong>Flight no:</strong>
+      <%= @flight.flight_no %>
+    </p>
 
-<p>
-  <strong>To:</strong>
-  <%= @flight.to %>
-</p>
+    <p>
+      <strong>Date:</strong>
+      <%= @flight.date %>
+    </p>
 
-<p>
-  <strong>From:</strong>
-  <%= @flight.from %>
-</p>
+    <p>
+      <strong>To:</strong>
+      <%= @flight.to %>
+    </p>
 
-<p>
-  <strong>Airplane:</strong>
-  <%= @flight.airplane_id %>
-</p>
+    <p>
+      <strong>From:</strong>
+      <%= @flight.from %>
+    </p>
 
-<%= link_to 'Edit', edit_flight_path(@flight) %> |
-<%= link_to 'Back', flights_path %>
+    <p>
+      <strong>Airplane:</strong>
+      <%= @flight.airplane_id %>
+    </p>
+
+    <%= link_to 'Edit', edit_flight_path(@flight) %> |
+    <%= link_to 'Back', flights_path %>
+  </div>
+
+  <footer>
+    &copy; 2021 Burning Airlines
+  </footer>
+</div>

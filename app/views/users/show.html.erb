@@ -1,9 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="text-center">
+    <%= image_tag 'logo.jpg', size: "100x100", class: "inline-image" %>
+    <h2 class="inline-image">Burning Airlines - Admin</h2>
+  </div>
+  <nav>
+      <%= render partial: 'layouts/nav'%>
+  </nav>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="text-center">
+    <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
+
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+  </div>
+
+  <footer>
+    &copy; 2021 Burning Airlines
+  </footer>
+</div>

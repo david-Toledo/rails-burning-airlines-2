@@ -5,7 +5,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     headers['Access-Control-Allow-Origin'] = '*'
-    render json: User.all
+    respond_to do |format|
+      format.html { render index: @users = User.all  }
+      format.json { render json: User.all }
+    end
   end
 
   # GET /users/1

@@ -1,5 +1,21 @@
-<h1>New User</h1>
+<div class="container-fluid">
+  <div class="text-center">
+    <%= image_tag 'logo.jpg', size: "100x100", class: "inline-image" %>
+    <h2 class="inline-image">Burning Airlines - Admin</h2>
+  </div>
+  <nav>
+      <%= render partial: 'layouts/nav'%>
+  </nav>
 
-<%= render 'form', user: @user %>
+  <div class="text-center">
+    <h1>New User</h1>
 
-<%= link_to 'Back', users_path %>
+    <%= render 'form', user: @user %>
+
+    <%= link_to 'Back', users_path %>
+  </div>
+
+  <footer>
+    &copy; 2021 Burning Airlines
+  </footer>
+</div>

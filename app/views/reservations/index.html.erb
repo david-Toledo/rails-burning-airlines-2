@@ -1,27 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="text-center">
+    <%= image_tag 'logo.jpg', size: "100x100", class: "inline-image" %>
+    <h2 class="inline-image">Burning Airlines - Admin</h2>
+  </div>
+  <nav>
+      <%= render partial: 'layouts/nav'%>
+  </nav>
+  <div class="text-center">
+    <p id="notice"><%= notice %></p>
 
-<h1>Reservations</h1>
+    <h1>Reservations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Booking code</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Booking code</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @reservations.each do |reservation| %>
-      <tr>
-        <td><%= reservation.booking_code %></td>
-        <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.booking_code %></td>
+            <td><%= link_to 'Show', reservation %></td>
+            <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+            <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+    <%= link_to 'New Reservation', new_reservation_path %>
+  </div>
+  <footer>
+    &copy; 2021 Burning Airlines
+  </footer>
+</div>

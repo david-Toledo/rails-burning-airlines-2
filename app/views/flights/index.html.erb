@@ -1,35 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="text-center">
+    <%= image_tag 'logo.jpg', size: "100x100", class: "inline-image" %>
+    <h2 class="inline-image">Burning Airlines - Admin</h2>
+  </div>
+  <nav>
+      <%= render partial: 'layouts/nav'%>
+  </nav>
 
-<h1>Flights</h1>
+  <div class="text-center">
+    <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Flight no</th>
-      <th>Date</th>
-      <th>To</th>
-      <th>From</th>
-      <th>Airplane</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Flights</h1>
 
-  <tbody>
-    <% @flights.each do |flight| %>
-      <tr>
-        <td><%= flight.flight_no %></td>
-        <td><%= flight.date %></td>
-        <td><%= flight.to %></td>
-        <td><%= flight.from %></td>
-        <td><%= flight.airplane_id %></td>
-        <td><%= link_to 'Show', flight %></td>
-        <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
-        <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Flight no</th>
+          <th>Date</th>
+          <th>To</th>
+          <th>From</th>
+          <th>Airplane</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @flights.each do |flight| %>
+          <tr>
+            <td><%= flight.flight_no %></td>
+            <td><%= flight.date %></td>
+            <td><%= flight.to %></td>
+            <td><%= flight.from %></td>
+            <td><%= flight.airplane_id %></td>
+            <td><%= link_to 'Show', flight %></td>
+            <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
+            <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Flight', new_flight_path %>
+    <br>
+
+    <%= link_to 'New Flight', new_flight_path %>
+  </div>
+
+  <footer>
+    &copy; 2021 Burning Airlines
+  </footer>
+</div>

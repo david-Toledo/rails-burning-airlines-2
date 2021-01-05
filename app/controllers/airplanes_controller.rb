@@ -5,7 +5,11 @@ class AirplanesController < ApplicationController
   # GET /airplanes.json
   def index
     headers['Access-Control-Allow-Origin'] = '*'
-    render json: Airplane.all
+    respond_to do |format|
+      format.html { render index: @airplanes = Airplane.all  }
+      format.json { render json: Airplane.all }
+    end
+    # render json: Airplane.all
   end
 
   # GET /airplanes/1
