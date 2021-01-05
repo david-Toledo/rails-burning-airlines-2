@@ -28,6 +28,9 @@ airplane3 = Airplane.create!(
 
 puts "Added #{Airplane.count} airplanes"
 
+#====================================================================
+
+
 Flight.destroy_all
 
 flight1 = Flight.create!(
@@ -54,4 +57,38 @@ flight3 = Flight.create!(
 puts "Added #{Flight.count} flights"
 
 
+
+
+
 #====================================================================
+
+
+User.destroy_all
+
+user1 = User.create!(name: "David")
+
+user2 = User.create!(name: "Kyle")
+
+user3 = User.create!(name: "Stacey")
+
+
+
+puts "Added #{User.count} users"
+
+
+
+
+
+#====================================================================
+
+Reservation.destroy_all
+
+reservation1 = Reservation.create!(booking_code: "AB1")
+
+reservation2 = Reservation.create!(booking_code: "AB2")
+
+reservation3 = Reservation.create!(booking_code: "AB3")
+
+
+
+puts "Added #{Reservation.count} reservations"
