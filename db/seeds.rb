@@ -28,5 +28,30 @@ airplane3 = Airplane.create!(
 
 puts "Added #{Airplane.count} airplanes"
 
+Flight.destroy_all
+
+flight1 = Flight.create!(
+  flight_no: 1,
+  date: "2021-01-01",
+  to: "Perth",
+  from: "Sydney"
+)
+
+flight2 = Flight.create!(
+  flight_no: 2,
+  date: "2021-01-01",
+  to: "Perth",
+  from: "Sydney"
+)
+
+flight3 = Flight.create!(
+  flight_no: 3,
+  date: "2021-01-01",
+  to: "Perth",
+  from: "Sydney"
+)
+
+puts "Added #{Flight.count} flights"
+
 
 #====================================================================
