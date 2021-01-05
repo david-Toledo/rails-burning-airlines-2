@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    headers['Access-Control-Allow-Origin'] = '*'
+    render json: User.all
   end
 
   # GET /users/1
