@@ -7,7 +7,7 @@
       <%= render partial: 'layouts/nav'%>
   </nav>
 
-  <div class="text-center">
+  <div class="text-center table">
     <p id="notice"><%= notice %></p>
 
     <h1>Flights</h1>
@@ -32,9 +32,9 @@
             <td><%= flight.to %></td>
             <td><%= flight.from %></td>
             <td><%= flight.airplane_id %></td>
-            <td><%= link_to 'Show', flight %></td>
-            <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
-            <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', flight, class: "btn btn-primary" %></td>
+            <td><%= link_to 'Edit', edit_flight_path(flight), class: "btn btn-success" %></td>
+            <td><%= link_to 'Destroy', flight, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
@@ -42,7 +42,7 @@
 
     <br>
 
-    <%= link_to 'New Flight', new_flight_path %>
+    <%= link_to 'New Flight', new_flight_path, class: "btn btn-success" %>
   </div>
 
   <footer>

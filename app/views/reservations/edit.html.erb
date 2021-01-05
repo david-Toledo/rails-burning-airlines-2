@@ -12,8 +12,8 @@
 
     <%= render 'form', reservation: @reservation %>
 
-    <%= link_to 'Show', @reservation %> |
-    <%= link_to 'Back', reservations_path %>
+    <%= link_to 'Show', @reservation, class: "btn btn-primary" %>
+    <%= link_to 'Back', reservations_path, class: "btn btn-danger" %>
   </div>
 
   <footer>

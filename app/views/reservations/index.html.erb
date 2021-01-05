@@ -6,7 +6,7 @@
   <nav>
       <%= render partial: 'layouts/nav'%>
   </nav>
-  <div class="text-center">
+  <div class="text-center table">
     <p id="notice"><%= notice %></p>
 
     <h1>Reservations</h1>
@@ -23,9 +23,9 @@
         <% @reservations.each do |reservation| %>
           <tr>
             <td><%= reservation.booking_code %></td>
-            <td><%= link_to 'Show', reservation %></td>
-            <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-            <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', reservation, class: "btn btn-primary" %></td>
+            <td><%= link_to 'Edit', edit_reservation_path(reservation), class: "btn btn-success" %></td>
+            <td><%= link_to 'Destroy', reservation, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
@@ -33,7 +33,7 @@
 
     <br>
 
-    <%= link_to 'New Reservation', new_reservation_path %>
+    <%= link_to 'New Reservation', new_reservation_path, class: "btn btn-success" %>
   </div>
   <footer>
     &copy; 2021 Burning Airlines

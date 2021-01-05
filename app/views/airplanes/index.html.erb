@@ -11,7 +11,7 @@
   <div class="text-center">
     <h1>Airplanes</h1>
 
-    <table class="text-center">
+    <table class="text-center table">
       <thead>
         <tr>
           <th>Serial no</th>
@@ -27,9 +27,9 @@
             <td><%= airplane.serial_no %></td>
             <td><%= airplane.row %></td>
             <td><%= airplane.column %></td>
-            <td><%= link_to 'Show', airplane %></td>
-            <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
-            <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', airplane, class: "btn btn-primary" %></td>
+            <td><%= link_to 'Edit', edit_airplane_path(airplane), class: "btn btn-success" %></td>
+            <td><%= link_to 'Destroy', airplane, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
@@ -37,7 +37,7 @@
 
     <br>
 
-    <%= link_to 'New Airplane', new_airplane_path %>
+    <%= link_to 'New Airplane', new_airplane_path, class: "btn btn-success" %>
   </div>
 
   <footer>
