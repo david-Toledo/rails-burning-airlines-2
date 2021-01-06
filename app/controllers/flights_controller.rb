@@ -16,13 +16,13 @@ class FlightsController < ApplicationController
   #GET flights/select/:id
   def search
     headers['Access-Control-Allow-Origin'] = '*'
-    set_flight
     render json: set_flight, include: ['airplane']
   end
 
   # GET /flights/1
   # GET /flights/1.json
   def show
+
   end
 
   # GET /flights/new
