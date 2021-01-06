@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, raise: false
 
   # GET /flights
   # GET /flights.json
@@ -15,8 +16,8 @@ class FlightsController < ApplicationController
   #GET flights/select/:id
   def search
     headers['Access-Control-Allow-Origin'] = '*'
-    res = Flight.find params[:id]
-    render json: res, include: ['airplane']
+    set_flight
+    render json: set_flight, include: ['airplane']
   end
 
   # GET /flights/1
