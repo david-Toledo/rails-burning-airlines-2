@@ -25,6 +25,11 @@ class FlightsController < ApplicationController
 
   end
 
+  def destination
+    headers['Access-Control-Allow-Origin'] = '*'
+    render json: Flight.where(from:params[:from],to:params[:to]), include: ['airplane']
+  end
+
   # GET /flights/new
   def new
     @flight = Flight.new

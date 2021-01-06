@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
   #GET flights/select/:id
   def search
     headers['Access-Control-Allow-Origin'] = '*'
-    res = Reservation.find_by(flight_id: params[:flight_id])
+    res = Reservation.where(flight_id: params[:flight_id])
     render json: res, include: ['flight', 'user']
   end
 
