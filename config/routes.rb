@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'homepage/index'
+  get 'flights/select/:id' => 'flights#search'
   resources :reservations
   resources :users
   resources :flights

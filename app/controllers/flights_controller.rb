@@ -12,6 +12,13 @@ class FlightsController < ApplicationController
     # render json: Airplane.all
   end
 
+  #GET flights/select/:id
+  def search
+    headers['Access-Control-Allow-Origin'] = '*'
+    res = Flight.find params[:id]
+    render json: res, include: ['airplane']
+  end
+
   # GET /flights/1
   # GET /flights/1.json
   def show
