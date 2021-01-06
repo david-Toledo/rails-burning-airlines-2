@@ -11,6 +11,13 @@ class ReservationsController < ApplicationController
     end
   end
 
+  #GET flights/select/:id
+  def search
+    headers['Access-Control-Allow-Origin'] = '*'
+    res = Reservation.find_by(flight_id: params[:flight_id])
+    render json: res, include: ['flight', 'user']
+  end
+
   # GET /reservations/1
   # GET /reservations/1.json
   def show
@@ -73,6 +80,6 @@ class ReservationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reservation_params
-      params.require(:reservation).permit(:booking_code)
+      params.require(:reservation).permit(:booking_code, :seat_no)
     end
 end

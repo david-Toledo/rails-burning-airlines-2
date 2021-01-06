@@ -13,6 +13,7 @@
     <p>
       <strong>Booking code:</strong>
       <%= @reservation.booking_code %>
+      <%= @reservation.seat_no %>
     </p>
 
     <%= link_to 'Edit', edit_reservation_path(@reservation), class: "btn btn-success" %>
