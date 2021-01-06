@@ -15,14 +15,13 @@ class FlightsController < ApplicationController
   #GET flights/select/:id
   def search
     headers['Access-Control-Allow-Origin'] = '*'
-    res = Flight.find params[:id]
-    render json: res, include: ['airplane']
+    render json: set_flight, include: ['airplane']
   end
 
   # GET /flights/1
   # GET /flights/1.json
   def show
-    
+
   end
 
   # GET /flights/new
@@ -75,6 +74,8 @@ class FlightsController < ApplicationController
   end
 
   private
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_flight
       @flight = Flight.find(params[:id])
