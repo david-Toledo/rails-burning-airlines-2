@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, raise: false
 
   # GET /reservations
   # GET /reservations.json
@@ -15,6 +16,12 @@ class ReservationsController < ApplicationController
   def search
     headers['Access-Control-Allow-Origin'] = '*'
     res = Reservation.where(flight_id: params[:flight_id])
+    render json: res, include: ['flight', 'user']
+  end
+  #GET flights/select/:id
+  def booking
+    headers['Access-Control-Allow-Origin'] = '*'
+    res = Reservation.where(booking_code: params[:booking_code])
     render json: res, include: ['flight', 'user']
   end
 
@@ -35,17 +42,22 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+    headers['Access-Control-Allow-Origin'] = '*'
+    reservation = Reservation.create reservation_params
 
-    respond_to do |format|
-      if @reservation.save
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
-        format.json { render :show, status: :created, location: @reservation }
-      else
-        format.html { render :new }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
-      end
-    end
+    render json: reservation, include: ['flight', 'user']
+
+    # @reservation = Reservation.new(reservation_params)
+    #
+    # respond_to do |format|
+    #   if @reservation.save
+    #     format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+    #     format.json { render :show, status: :created, location: @reservation }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @reservation.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /reservations/1
@@ -80,6 +92,6 @@ class ReservationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reservation_params
-      params.require(:reservation).permit(:booking_code, :seat_no)
+      params.require(:reservation).permit(:booking_code, :seat_no, :user_id, :flight_id)
     end
 end
