@@ -105,11 +105,11 @@ puts "Added #{Flight.count} flights"
 
 User.destroy_all
 
-user1 = User.create!(name: "David")
+user1 = User.create!(name: "David", email:'david@ga.co', password:'password')
 
-user2 = User.create!(name: "Kyle")
+user2 = User.create!(name: "Kyle", email:'kyle@ga.co', password:'password')
 
-user3 = User.create!(name: "Stacey")
+user3 = User.create!(name: "Stacey", email:'stacey@ga.co', password:'password')
 
 
 
