@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'flights/select/:id' => 'flights#search'
   get 'flights/:from/:to' => 'flights#destination'
   get 'reservations/select/:flight_id' => 'reservations#search'
+  get 'reservations/booking/:booking_code' => 'reservations#booking'
   resources :reservations
   resources :users
   resources :flights
